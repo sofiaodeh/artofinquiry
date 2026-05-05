@@ -399,6 +399,62 @@
   }
   .listen-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
+  /* SUGGEST */
+  .suggest { background: var(--warm-white); border-top: 1px solid var(--border); }
+
+  .suggest-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .suggest-desc {
+    font-size: 0.92rem;
+    color: var(--warm-gray);
+    line-height: 1.85;
+    margin-top: 1rem;
+  }
+
+  .suggest-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--dark);
+    transition: border-color 0.2s;
+    resize: none;
+    outline: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: #a09488; }
+
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .suggest-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
   /* FOOTER */
   footer {
     background: var(--dark);
@@ -447,6 +503,7 @@
   <ul class="nav-links">
     <li><a href="#episodes">Episodes</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#suggest">Suggest</a></li>
     <li><a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank">Listen</a></li>
   </ul>
 </nav>
@@ -465,8 +522,12 @@
     </div>
   </div>
   <div class="hero-image">
-  <img src="hero-photo.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
-</div>
+    <div class="hero-image-placeholder">
+      <div class="placeholder-icon">🎙</div>
+      <span>Add host photo here</span>
+      <span style="font-size:0.72rem; color:#a09488">Replace with: hero-photo.jpg</span>
+    </div>
+  </div>
 </section>
 
 <!-- FEATURED EPISODE -->
@@ -597,6 +658,44 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUGGEST A GUEST -->
+<section class="suggest" id="suggest">
+  <div class="container">
+    <div class="suggest-inner">
+      <div class="suggest-text">
+        <p class="section-label">Know someone we should talk to?</p>
+        <h2 class="section-title">Suggest a<br>researcher</h2>
+        <p class="suggest-desc">We're always looking for scientists, designers, and thinkers who refuse to stay in one lane. If someone's work has made you see your field differently, we want to hear about them.</p>
+      </div>
+      <form class="suggest-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="your-name">Your name</label>
+            <input type="text" id="your-name" name="your-name" placeholder="Sofia Odeh">
+          </div>
+          <div class="form-group">
+            <label for="your-email">Your email</label>
+            <input type="email" id="your-email" name="email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="researcher-name">Researcher's name</label>
+          <input type="text" id="researcher-name" name="researcher-name" placeholder="Dr. Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label for="researcher-field">Field / institution</label>
+          <input type="text" id="researcher-field" name="researcher-field" placeholder="Robotics, MIT">
+        </div>
+        <div class="form-group">
+          <label for="why">Why would they be a great guest?</label>
+          <textarea id="why" name="why" rows="4" placeholder="Tell us what makes their work sit at the intersection of creativity and science..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send suggestion</button>
+      </form>
     </div>
   </div>
 </section>
