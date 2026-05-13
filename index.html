@@ -110,6 +110,13 @@
   .host-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--cream); margin-bottom: 0.15rem; }
   .host-role { font-size: 0.75rem; color: #6a5e58; letter-spacing: 0.04em; }
 
+  .slideshow { width:100%; height:100%; position:relative; }
+  .slide { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.8s ease; }
+  .slide.active { opacity:1; }
+  .slide-dots { position:absolute; bottom:1rem; left:50%; transform:translateX(-50%); display:flex; gap:0.5rem; z-index:2; }
+  .dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:background 0.3s; }
+  .dot.active { background:rgba(255,255,255,0.95); }
+
   /* SUGGEST */
   .suggest { background: var(--warm-white); border-top: 1px solid var(--border); padding: 5rem 0; }
   .suggest-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
@@ -283,14 +290,27 @@
 <section class="about" id="about">
   <div class="container">
     <div class="about-inner">
-      <div class="about-image-wrap">
-        <img src="hero-photo.jpg" alt="Sofia Odeh">
+      <div class="about-image-wrap" style="position:relative;overflow:hidden;aspect-ratio:4/3;border-radius:2px;">
+        <div class="slideshow">
+          <img src="photo3.jpg" class="slide active" alt="Behind the scenes">
+          <img src="photo4.jpg" class="slide" alt="Behind the scenes">
+          <img src="photo5.jpg" class="slide" alt="Behind the scenes">
+          <img src="photo6.jpg" class="slide" alt="Behind the scenes">
+        </div>
+        <div class="slide-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
       </div>
       <div>
         <p class="section-label">About the Podcast</p>
         <h2 class="section-title">Science and art<br>are not parallel paths</h2>
-        <p class="about-text">The Art of Inquiry shines a light on the beauty of STEM by interviewing scientists and exploring how they see art reflected in their work. We delve into research not just technically, but from a holistic and artistic perspective, highlighting the interdisciplinary efforts that often go unseen.</p>
-        <p class="about-text">Our goal is to inspire curiosity and show how creativity and science effortlessly intersect. Every guest we speak to has refused to stay in one lane. That refusal, we think, is where the most interesting ideas live.</p>
+        <p class="about-text">Some ideas are too alive to belong to one discipline. Art of Inquiry is a podcast about the people who follow curiosity wherever it leads, across science, art, philosophy, design, and technology. I sit down with researchers, designers, and thinkers whose work crosses boundaries and let the conversation go wherever it needs to.</p>
+        <p class="about-text">Sometimes that means uncovering the artistry hidden inside hard science. Sometimes it means understanding the technical precision behind a creative vision. Every guest has refused to stay in one lane. That refusal is where the most interesting ideas live.</p>
+        <p class="about-text">The podcast began in San Francisco, where my co-founder Maya Einhorn and I were both doing deeply technical work in a city that was once defined by its music, art, and spirituality. A conversation between us sharpened something we had both been feeling: that our passion for art and our work in STEM didn't have to live in separate hours of the day. Art of Inquiry grew out of that realization.</p>
+        <p class="about-text">From May 2026 onward, I am continuing the podcast independently as Maya pursues her career after graduating from Northeastern.</p>
         <div class="hosts">
           <div class="host">
             <div class="host-avatar">✦</div>
@@ -303,7 +323,7 @@
             <div class="host-avatar">✦</div>
             <div>
               <p class="host-name">Maya Einhorn</p>
-              <p class="host-role">Co-host, Episodes 1–6</p>
+              <p class="host-role">Co-host, Episodes 1–5</p>
             </div>
           </div>
         </div>
@@ -376,6 +396,20 @@
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
+
+  // Slideshow
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let cur = 0;
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+  setInterval(() => goTo(cur + 1), 3500);
 </script>
 </body>
 </html>
