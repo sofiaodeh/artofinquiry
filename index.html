@@ -114,6 +114,12 @@
   .slideshow { width:100%; height:100%; position:relative; }
   .slide { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain; background:#1a1612; opacity:0; transition:opacity 0.8s ease; }
   .slide.active { opacity:1; }
+  .slide { pointer-events:none; } .slide.active { pointer-events:auto; }
+  .quote-slide { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem 3rem; }
+  .quote-slide blockquote { font-family:'Playfair Display', serif; font-style:italic; font-size:clamp(1.3rem, 3vw, 2rem); line-height:1.35; color:var(--cream); max-width:28ch; margin-bottom:1.25rem; }
+  .quote-slide cite { font-style:normal; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); }
+  .quote-slide a { color:inherit; text-decoration:none; }
+  .quote-slide a:hover cite { color:var(--terracotta-light); }
   .slide-dots { position:absolute; bottom:1rem; left:50%; transform:translateX(-50%); display:flex; gap:0.5rem; z-index:2; }
   .dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:background 0.3s; }
   .dot.active { background:rgba(255,255,255,0.95); }
@@ -197,10 +203,14 @@
     <p class="section-label">Latest Episode</p>
     <div class="featured-inner">
       <div>
-        <p class="episode-number">Episode 06</p>
-        <h2 class="featured-title">Sara Hendren: Who Is the Built World Actually Built For?</h2>
-        <p class="featured-desc">Sara Hendren didn't start out in engineering. She started as a visual artist, then moved into cultural history, studying objects and what they say about the world that made them. Then life brought her into spaces filled with a new kind of object: gadgets and tools doing quiet therapeutic work, covered in butterflies and bugs, useful and expressive all at once. That was the moment everything snapped together. In this conversation, Sara walks us through the space between mechanical design and design for expression, and what it means to have a mentor who once built a fully functional vehicle for homeless people in New York and Philadelphia — not as charity, but as provocation.</p>
-        <span class="episode-duration">&#9679; 55 min</span>
+        <p class="episode-number">Episode 07</p>
+        <h2 class="featured-title">Tod Machover: Reimagining the Instrument</h2>
+        <p class="featured-desc">Tod Machover's mother sent him around the house to find objects, turn their sounds into stories, and draw a picture so he could remember what he played. His father was an engineer who wanted anyone to be able to use a computer. In this conversation, Tod talks about the hypercello he built for Yo-Yo Ma, the seven-foot construction kit for children he abandoned for software, the opera he wrote for an orchestra of two, and his new piece for the Boston Symphony, where a live AI listens to every player and, for one section, the conductor stops conducting.</p>
+        <!-- TODO: replace the duration -->
+        <span class="episode-duration">&#9679; [duration]</span>
+        <div class="hero-actions" style="margin-top:1.75rem;">
+          <a href="machover.html" class="btn btn-outline">Episode page and links</a>
+        </div>
       </div>
       <div class="spotify-embed">
         <iframe style="border-radius:4px" src="https://open.spotify.com/embed/show/7vNbyoHH3YWxI9D1fchToJ?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -216,6 +226,17 @@
     <h2 class="section-title">Every conversation,<br>from the beginning</h2>
     <div class="ornament">&#9670; &#9670; &#9670;</div>
     <div class="episodes-grid">
+
+      <a class="episode-card" href="machover.html">
+        <p class="card-number">Episode 07</p>
+        <h3 class="card-guest">Tod Machover</h3>
+        <p class="card-subtitle">Reimagining the Instrument</p>
+        <p class="card-desc">Composer and inventor Tod Machover on instruments that listen, software that lets a five-year-old write for an orchestra, and putting live AI on stage with the Boston Symphony.</p>
+        <div class="card-footer">
+          <span class="card-duration">[duration]</span>
+          <span class="card-play">Episode page</span>
+        </div>
+      </a>
 
       <a class="episode-card" href="https://open.spotify.com/episode/11zlpahmklfgr8YOUrtLnY?si=2e511b5feae14348" target="_blank">
         <p class="card-number">Episode 06</p>
@@ -297,9 +318,19 @@
           <img src="photo4.png" class="slide" alt="Behind the scenes">
           <img src="photo5.png" class="slide" alt="Behind the scenes">
           <img src="photo6.png" class="slide" alt="Behind the scenes">
+          <!-- Optional: add a still from the Machover recording as photo7.png and uncomment -->
+          <!-- <img src="photo7.png" class="slide" alt="Sofia Odeh and Tod Machover in the studio"> -->
+          <div class="slide quote-slide">
+            <a href="machover.html">
+              <blockquote>&ldquo;Music is more like a river than it is like a sculpture. It&rsquo;s something that flows and changes.&rdquo;</blockquote>
+              <cite>Tod Machover, Episode 07</cite>
+            </a>
+          </div>
         </div>
         <div class="slide-dots">
           <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
@@ -413,4 +444,4 @@
   setInterval(() => goTo(cur + 1), 3500);
 </script>
 </body>
-</html> 
+</html>
