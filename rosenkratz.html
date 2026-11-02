@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rachel Rosenkrantz: A Guitar in a Month, Not 200 Years | The Art of Inquiry</title>
+<meta name="description" content="Episode 08 of The Art of Inquiry with luthier Rachel Rosenkrantz, with links to the work discussed.">
+<meta property="og:title" content="Rachel Rosenkrantz: A Guitar in a Month, Not 200 Years">
+<meta property="og:description" content="Episode 08 of The Art of Inquiry, with links to the works discussed.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #ede8df;
+    --warm-white: #f2ede6;
+    --terracotta: #9e3d1a;
+    --terracotta-light: #b84d28;
+    --gold: #7a6030;
+    --warm-gray: #52504c;
+    --dark: #1a1612;
+    --mid: #38322e;
+    --border: #cec5b8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-white);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  a:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+  img { display: block; max-width: 100%; }
+
+  /* NAV (same as main site) */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(242, 237, 230, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); text-decoration: none; letter-spacing: 0.03em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--warm-gray); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 2px; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; font-weight: 500; border: none; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: var(--terracotta); color: var(--warm-white); }
+  .btn-primary:hover { background: var(--terracotta-light); }
+  .btn-outline { background: transparent; color: var(--dark); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  section { padding: 5rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
+
+  /* EPISODE HEADER */
+  .episode-hero { background: var(--cream); padding: 9rem 0 5rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: start; }
+  .hero-grid.no-photo { grid-template-columns: 1fr; }
+  .back-link { display: inline-block; font-size: 0.8rem; color: var(--warm-gray); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--terracotta); }
+  .episode-number { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .episode-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.12; color: var(--dark); margin-bottom: 0.5rem; max-width: 18ch; }
+  .episode-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--terracotta); margin-bottom: 2rem; }
+  .episode-intro { color: var(--warm-gray); font-size: 1rem; line-height: 1.85; max-width: 62ch; margin-bottom: 1.25rem; }
+  .episode-meta { font-size: 0.8rem; color: var(--warm-gray); margin: 1.5rem 0 2rem; }
+  .episode-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-photo { margin-top: 4.6rem; }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+  .photo-credit { font-size: 0.72rem; color: var(--warm-gray); margin-top: 0.6rem; }
+
+  /* WORKS */
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
+  .work { background: var(--warm-white); padding: 2rem; }
+  .work-image { margin: -2rem -2rem 1.5rem; }
+  .work-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); line-height: 1.3; margin-bottom: 0.5rem; }
+  .work-desc { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 1.25rem; }
+  .work-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .work-links a { font-size: 0.88rem; color: var(--terracotta); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .work-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .link-kind { font-size: 0.72rem; color: var(--warm-gray); margin-left: 0.4rem; }
+
+  /* EXTRA MATERIALS */
+  .extras { background: var(--dark); color: var(--cream); }
+  .extras .section-label { color: var(--gold); }
+  .extras .section-title { color: var(--cream); }
+  .extras-text { font-size: 0.95rem; line-height: 1.9; color: #b8ada4; max-width: 62ch; margin-bottom: 2rem; }
+  .extras .work-links a { color: var(--cream); border-bottom-color: #6a5e58; }
+  .extras .work-links a:hover { color: var(--terracotta-light); border-bottom-color: var(--terracotta-light); }
+  .extras .link-kind { color: #b8ada4; }
+
+  /* LISTEN + FOOTER (same as main site) */
+  .listen { border-top: 1px solid var(--border); background: var(--cream); padding: 3rem 0; }
+  .listen-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .listen-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); }
+  .listen-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .listen-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 2px; text-decoration: none; font-size: 0.82rem; color: var(--dark); transition: all 0.2s; background: var(--warm-white); }
+  .listen-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  footer { background: var(--dark); color: #6a5e58; padding: 2.5rem 2rem; text-align: center; font-size: 0.8rem; letter-spacing: 0.04em; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { color: var(--terracotta-light); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 3.5rem 0; }
+    .episode-hero { padding: 7rem 0 3.5rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-photo { margin-top: 0; }
+    .hero-photo img { aspect-ratio: 3 / 2; }
+    .works-grid { grid-template-columns: 1fr; }
+    .listen-inner { flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">The Art of Inquiry</a>
+  <ul class="nav-links">
+    <li><a href="index.html#episodes">Episodes</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#suggest">Suggest</a></li>
+    <li><a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank">Listen</a></li>
+  </ul>
+</nav>
+
+<!-- EPISODE HEADER -->
+<section class="episode-hero">
+  <div class="container">
+    <a class="back-link" href="index.html#episodes">&#8592; All episodes</a>
+    <div class="hero-grid">
+      <div>
+        <p class="episode-number">Episode 08</p>
+        <h1 class="episode-title">Rachel Rosenkrantz</h1>
+        <p class="episode-subtitle">A Guitar in a Month, Not 200 Years</p>
+
+        <p class="episode-intro">At 21, Rachel Rosenkrantz asked a Paris guitar shop for an apprenticeship and was told she was too old. She spent the next decade in industrial design, including on a lighting innovation team at Philips, until weekend classes at a guitar building school led her to &ldquo;crossfade&rdquo; her career. She now runs Atelier Rosenkrantz and teaches in Experimental and Foundation Studies at the Rhode Island School of Design.</p>
+        <p class="episode-intro">We talk about the IKEA box that led to an electric guitar grown from mycelium, a paper sample she kept on a kitchen shelf for years, a kombucha experiment that still needs a chemist, an ambidextrous guitar that came from listening to Elizabeth Cotten, and why instruments made from gourds convinced her she could grow a guitar in a month instead of waiting 200 years for a tree.</p>
+
+        <!-- TODO: confirm the duration -->
+        <p class="episode-meta">&#9679; 52 min</p>
+        <div class="episode-actions">
+          <!-- TODO: replace # with the Spotify episode link -->
+          <a href="#" target="_blank" class="btn btn-primary">&#9654; Listen on Spotify</a>
+          <a href="#works" class="btn btn-outline">From the conversation</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/rosenkrantz/portrait.jpg" alt="Rachel Rosenkrantz in her workshop">
+        <figcaption class="photo-credit">Photo courtesy of Atelier Rosenkrantz</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FROM THE CONVERSATION -->
+<section id="works">
+  <div class="container">
+    <p class="section-label">From the conversation</p>
+    <h2 class="section-title">The work we<br>talked about</h2>
+
+    <div class="works-grid">
+
+      <div class="work">
+        <figure class="work-image"><img src="images/rosenkrantz/mycocaster.jpg" alt="The Mycocaster, an electric guitar with a mycelium body"></figure>
+        <h3 class="work-title">The Mycocaster</h3>
+        <p class="work-desc">It started when Rachel opened an IKEA box and found the corner pieces were mushroom, not polystyrene. Polystyrene carries sound well because it is full of air, so she tested whether its natural counterpart would too, first in an old ukulele mold and then at guitar scale. Mycelium alone breaks like a granola bar, so a compressed paper shell protects the body and works like the reflector of a desk lamp, sending the sound where it needs to go. The grown body can be swapped out or upgraded, and she is now growing a formula with more bass response.</p>
+        <ul class="work-links">
+          <li><a href="https://www.atelierrosenkrantz.com/" target="_blank">Atelier Rosenkrantz</a><span class="link-kind">studio site</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="images/rosenkrantz/paper.jpg" alt="Guitar parts made from compressed paper"></figure>
+        <h3 class="work-title">Wood made from paper</h3>
+        <p class="work-desc">In 2005, Rachel kept a small sphere from a company trying to recreate wood from paper. Years later, doing the dishes, she remembered it and looked the company up. The paper was now fully recycled and the binder non-toxic, safe enough for pizza peels. Materials like Richlite mean she no longer has to make every substrate from scratch, and each guitar comes out consistent.</p>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="images/rosenkrantz/kombucha.jpg" alt="Kombucha scoby leather"></figure>
+        <h3 class="work-title">Kombucha leather</h3>
+        <p class="work-desc">When layers of kombucha are stacked, they fuse, so a banjo head could be grown with its own bracing built in. Her longest test lasted three months before it dried out. Her next idea is lamination with fiber between the layers. She trained in art school, not chemistry, and would welcome help.</p>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="images/rosenkrantz/beehive.jpg" alt="The beehive bass, built by bees on a frame"></figure>
+        <h3 class="work-title">The beehive bass</h3>
+        <p class="work-desc">Rachel left a frame in a beehive so the bees would build on it. She calls it a visual poetry experiment and is fine if it does not last. But beehive specimens from the 1970s at RISD&rsquo;s Nature Lab are still in good condition, one of many reasons she thinks natural materials last longer than we assume.</p>
+        <ul class="work-links">
+          <!-- TODO: click once to confirm -->
+          <li><a href="https://naturelab.risd.edu/" target="_blank">Edna Lawrence Nature Lab</a><span class="link-kind">RISD, open to the public</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="images/rosenkrantz/ambidextrous.jpg" alt="Rachel's ambidextrous guitar"></figure>
+        <h3 class="work-title">An ambidextrous guitar</h3>
+        <p class="work-desc">Listening to Elizabeth Cotten, who played a right-handed guitar left-handed, Rachel started thinking about the roughly one in ten players who cannot pick up a borrowed guitar and just play. Existing fixes convert a guitar from one hand to the other. She wants one instrument that works for both.</p>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Instruments from gourds</h3>
+        <p class="work-desc">For centuries, people on several continents have built instruments from gourds, which grow in a single season: the hulusi, a gourd flute from China; the berimbau, a musical bow from Brazil; and the kora, a harp-lute from Mali with a calabash body. That idea is where the Mycocaster&rsquo;s ethos began.</p>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="images/rosenkrantz/teaching.jpg" alt="Students with instruments they built"></figure>
+        <h3 class="work-title">Teaching at RISD and in Florence</h3>
+        <p class="work-desc">Rachel&rsquo;s first-year students build their own instruments, and the greener and cheaper the material, the better. She would rather a student take a risk and fail than play it safe and learn nothing. In Florence, violin maker Paris Andrew joined the class as a guest critic and brought a cellist to play the students&rsquo; instruments.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA MATERIALS -->
+<section class="extras" id="extras">
+  <div class="container">
+    <p class="section-label">Extra materials</p>
+    <h2 class="section-title">Ten years earlier</h2>
+    <p class="extras-text">Before Rachel started working with biomaterials, she appeared on <em>Raw Craft with Anthony Bourdain</em>, talking about building guitars meant to last for generations. Our conversation picks up how her thinking about permanence has changed since.</p>
+    <ul class="work-links">
+      <!-- TODO: add the Raw Craft link -->
+      <li><a href="https://redshift.autodesk.com/videos/rachel-rosenkrantz" target="_blank">Luthier Rachel Rosenkrantz innovates a centuries-old craft</a><span class="link-kind">Autodesk video</span></li>
+    </ul>
+    <!-- TODO: add the links Rachel sends here or in the matching cards above -->
+  </div>
+</section>
+
+<!-- LISTEN ON -->
+<div class="listen">
+  <div class="container">
+    <div class="listen-inner">
+      <p class="listen-label">Available on</p>
+      <div class="listen-links">
+        <a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank" class="listen-link">&#9654; Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/art-of-inquiry/id1896270647" target="_blank" class="listen-link">&#9835; Apple Podcasts</a>
+        <a href="https://music.amazon.com/podcasts/35a56baf-caa5-43d5-81f4-04f6d8f62e6d/art-of-inquiry" target="_blank" class="listen-link">&#9675; Amazon Music</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&#169; 2026 The Art of Inquiry &nbsp;&#183;&nbsp; Northeastern University &nbsp;&#183;&nbsp; <a href="mailto:hello@artofinquiry.com">Get in touch</a></p>
+</footer>
+
+<script>
+  // If a photo hasn't been added yet, remove its slot so the layout stays clean.
+  document.querySelectorAll('.work-image img, .hero-photo img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var fig = img.closest('figure');
+      if (fig && fig.classList.contains('hero-photo')) {
+        fig.closest('.hero-grid').classList.add('no-photo');
+      }
+      if (fig) fig.remove();
+    });
+  });
+</script>
+</body>
+</html>
