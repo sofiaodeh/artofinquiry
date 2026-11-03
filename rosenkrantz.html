@@ -84,6 +84,11 @@
   .work { background: var(--warm-white); padding: 2rem; }
   .work-image { margin: -2rem -2rem 1.5rem; }
   .work-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-image.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); }
+  .work-image.inline { margin: 0 0 0.5rem; }
+  .work-image.inline img { aspect-ratio: 16 / 9; border-radius: 2px; }
+  .video-wrap { position: relative; width: 100%; max-width: 860px; aspect-ratio: 16/9; border-radius: 2px; overflow: hidden; background: #000; }
+  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .work-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); line-height: 1.3; margin-bottom: 0.5rem; }
   .work-desc { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 1.25rem; }
   .work-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
@@ -180,45 +185,32 @@
       <div class="work">
         <figure class="work-image"><img src="mycocaster.jpg" alt="The Mycocaster, an electric guitar with a mycelium body"></figure>
         <h3 class="work-title">The Mycocaster</h3>
-        <p class="work-desc">It started when Rachel opened an IKEA box and found the corner pieces were mushroom, not polystyrene. Polystyrene carries sound well because it is full of air, so she tested whether its natural counterpart would too, first in an old ukulele mold and then at guitar scale. Mycelium alone breaks like a granola bar, so a compressed paper shell protects the body and works like the reflector of a desk lamp, sending the sound where it needs to go. The grown body can be swapped out or upgraded, and she is now growing a formula with more bass response.</p>
+        <p class="work-desc">It started when Rachel opened an IKEA box and found the corner pieces were mushroom, not polystyrene. Polystyrene carries sound well because it is full of air, so she tested whether its natural counterpart would too, first in an old ukulele mold and then at guitar scale. The core of the body is grown from mycelium and agricultural by-products, and the shell and neck are compressed recycled paper. The only wood is on the sides, made from rosewood scraps left over from an earlier build. The mycelium core can be swapped out or upgraded, and she is now growing a formula with more bass response.</p>
         <ul class="work-links">
-          <li><a href="https://www.atelierrosenkrantz.com/" target="_blank">Atelier Rosenkrantz</a><span class="link-kind">studio site</span></li>
+          <li><a href="https://www.atelierrosenkrantz.com/team-3" target="_blank">Mycocaster</a><span class="link-kind">Atelier Rosenkrantz</span></li>
         </ul>
       </div>
 
       <div class="work">
-        <h3 class="work-title">Wood made from paper</h3>
-        <p class="work-desc">In 2005, Rachel kept a small sphere from a company trying to recreate wood from paper. Years later, doing the dishes, she remembered it and looked the company up. The paper was now fully recycled and the binder non-toxic, safe enough for pizza peels. Materials like Richlite mean she no longer has to make every substrate from scratch, and each guitar comes out consistent.</p>
+        <figure class="work-image pair">
+          <img src="beehive.jpg" alt="The 309Hz guitar, whose soundboard spent a year in a beehive">
+          <img src="honey2.png" alt="Honeycomb on the soundboard of the 309Hz guitar">
+        </figure>
+        <h3 class="work-title">309Hz, the beehive guitar</h3>
+        <p class="work-desc">Rachel left this steel-string guitar&rsquo;s soundboard in a beehive for a whole year so the bees would build on it. Honeycomb diffuses sound naturally, and bees communicate through it with vibrations in a range close to a guitar&rsquo;s. She calls it a visual poetry experiment and is fine if it does not last, though beehive specimens from the 1970s at RISD&rsquo;s Nature Lab are still in good condition.</p>
+        <ul class="work-links">
+          <li><a href="https://www.atelierrosenkrantz.com/pawtuxet" target="_blank">309Hz</a><span class="link-kind">Atelier Rosenkrantz</span></li>
+        </ul>
       </div>
 
       <div class="work">
+        <figure class="work-image pair">
+          <img src="kombucha1.png" alt="Kombucha leather experiment">
+          <img src="kombucha2.png" alt="Kombucha leather experiment">
+        </figure>
         <h3 class="work-title">Kombucha leather</h3>
-        <p class="work-desc">When layers of kombucha are stacked, they fuse, so a banjo head could be grown with its own bracing built in. Her longest test lasted three months before it dried out. Her next idea is lamination with fiber between the layers. She trained in art school, not chemistry, and would welcome help.</p>
-      </div>
-
-      <div class="work">
-        <figure class="work-image"><img src="beehive.jpg" alt="The beehive bass, built by bees on a frame"></figure>
-        <h3 class="work-title">The beehive bass</h3>
-        <p class="work-desc">Rachel left a frame in a beehive so the bees would build on it. She calls it a visual poetry experiment and is fine if it does not last. But beehive specimens from the 1970s at RISD&rsquo;s Nature Lab are still in good condition, one of many reasons she thinks natural materials last longer than we assume.</p>
-        <ul class="work-links">
-          <!-- TODO: click once to confirm -->
-          <li><a href="https://naturelab.risd.edu/" target="_blank">Edna Lawrence Nature Lab</a><span class="link-kind">RISD, open to the public</span></li>
-        </ul>
-      </div>
-
-      <div class="work">
-        <h3 class="work-title">An ambidextrous guitar</h3>
-        <p class="work-desc">Listening to Elizabeth Cotten, who played a right-handed guitar left-handed, Rachel started thinking about the roughly one in ten players who cannot pick up a borrowed guitar and just play. Existing fixes convert a guitar from one hand to the other. She wants one instrument that works for both.</p>
-      </div>
-
-      <div class="work">
-        <h3 class="work-title">Instruments from gourds</h3>
-        <p class="work-desc">For centuries, people on several continents have built instruments from gourds, which grow in a single season: the hulusi, a gourd flute from China; the berimbau, a musical bow from Brazil; and the kora, a harp-lute from Mali with a calabash body. That idea is where the Mycocaster&rsquo;s ethos began.</p>
-      </div>
-
-      <div class="work">
-        <h3 class="work-title">Teaching at RISD and in Florence</h3>
-        <p class="work-desc">Rachel&rsquo;s first-year students build their own instruments, and the greener and cheaper the material, the better. She would rather a student take a risk and fail than play it safe and learn nothing. In Florence, violin maker Paris Andrew joined the class as a guest critic and brought a cellist to play the students&rsquo; instruments.</p>
+        <p class="work-desc">When layers of kombucha are stacked, they fuse, so a banjo head could be grown in shape with its own bracing built in. Her longest test lasted three months before it dried out. Her next idea is lamination, with fiber between the layers for reinforcement and outer layers to slow the drying. She trained in art school, not chemistry, and would welcome help from anyone who wants to try.</p>
+        <figure class="work-image inline"><img src="basaltfibers.png" alt="Basalt fibers"><figcaption class="photo-credit">Basalt fibers</figcaption></figure>
       </div>
 
     </div>
@@ -243,6 +235,7 @@
       </div>
 
     </div>
+    <p class="photo-credit" style="margin-top:1rem;">Photos courtesy of Atelier Rosenkrantz.</p>
   </div>
 </section>
 
@@ -251,12 +244,14 @@
   <div class="container">
     <p class="section-label">Extra materials</p>
     <h2 class="section-title">Ten years earlier</h2>
-    <p class="extras-text">Before Rachel started working with biomaterials, she appeared on <em>Raw Craft with Anthony Bourdain</em>, talking about building guitars meant to last for generations. Our conversation picks up how her thinking about permanence has changed since.</p>
-    <ul class="work-links">
-      <!-- TODO: add the Raw Craft link -->
-      <li><a href="https://redshift.autodesk.com/videos/rachel-rosenkrantz" target="_blank">Luthier Rachel Rosenkrantz innovates a centuries-old craft</a><span class="link-kind">Autodesk video</span></li>
+    <p class="extras-text">About ten years ago, before she started working with biomaterials, Rachel appeared on <em>Raw Craft with Anthony Bourdain</em> and talked about building guitars that last for generations. In our conversation she explains how that thinking changed: when a material may not last, she designs the part to be replaceable.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/PC6Acydf0jc" title="Raw Craft with Anthony Bourdain: Rachel Rosenkrantz" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <ul class="work-links" style="margin-top:1.5rem;">
+      <li><a href="https://www.youtube.com/watch?v=PC6Acydf0jc" target="_blank">Raw Craft with Anthony Bourdain</a><span class="link-kind">YouTube</span></li>
+      <li><a href="https://redshift.autodesk.com/videos/rachel-rosenkrantz" target="_blank">Luthier Rachel Rosenkrantz innovates a centuries-old craft</a><span class="link-kind">Autodesk</span></li>
     </ul>
-    <!-- TODO: add the links Rachel sends here or in the matching cards above -->
   </div>
 </section>
 
@@ -280,14 +275,13 @@
 </footer>
 
 <script>
-  // If a photo hasn't been added yet, remove its slot so the layout stays clean.
-  document.querySelectorAll('.work-image img, .hero-photo img').forEach(function (img) {
+  // A photo that fails to load is removed; an empty frame goes with it.
+  document.querySelectorAll('.work-image img').forEach(function (img) {
     img.addEventListener('error', function () {
       var fig = img.closest('figure');
-      if (fig && fig.classList.contains('hero-photo')) {
-        fig.closest('.hero-grid').classList.add('no-photo');
-      }
-      if (fig) fig.remove();
+      img.remove();
+      if (fig && !fig.querySelector('img')) fig.remove();
+      else if (fig) fig.classList.remove('pair');
     });
   });
 </script>
