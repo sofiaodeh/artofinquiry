@@ -85,6 +85,8 @@
   .work-image { margin: -2rem -2rem 1.5rem; }
   .work-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
   .work-image.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); }
+  .work-image.trio { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); }
+  .work-image.trio img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
   .work-image.inline { margin: 0 0 0.5rem; }
   .work-image.inline img { aspect-ratio: 16 / 9; border-radius: 2px; }
   .video-wrap { position: relative; width: 100%; max-width: 860px; aspect-ratio: 16/9; border-radius: 2px; overflow: hidden; background: #000; }
@@ -210,7 +212,6 @@
         </figure>
         <h3 class="work-title">Kombucha leather</h3>
         <p class="work-desc">When layers of kombucha are stacked, they fuse, so a banjo head could be grown in shape with its own bracing built in. Her longest test lasted three months before it dried out. Her next idea is lamination, with fiber between the layers for reinforcement and outer layers to slow the drying. She trained in art school, not chemistry, and would welcome help from anyone who wants to try.</p>
-        <figure class="work-image inline"><img src="basaltfibers.png" alt="Basalt fibers"><figcaption class="photo-credit">Basalt fibers</figcaption></figure>
       </div>
 
     </div>
@@ -231,6 +232,20 @@
         <p class="work-desc">A semi-hollow electric guitar in sipo wood, inlaid with eggshells in lacquer with gold leaf, a technique borrowed from antique French and Asian furniture. Its pickup recharges over USB, so there are no 9-volt batteries to throw away. It was her pandemic project, built from eggshells saved one quarantine omelet at a time.</p>
         <ul class="work-links">
           <li><a href="https://www.atelierrosenkrantz.com/honfleur" target="_blank">Honfleur</a><span class="link-kind">Atelier Rosenkrantz</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <figure class="work-image trio">
+          <img src="basaltfibers.png" alt="Basalt fibers used in the New Bedford guitar">
+          <img src="fish1.png" alt="The New Bedford guitar">
+          <img src="fish2.png" alt="The New Bedford guitar">
+        </figure>
+        <p class="photo-credit" style="margin:-1rem 0 1rem;">Top: the basalt fibers</p>
+        <h3 class="work-title">The New Bedford guitar</h3>
+        <p class="work-desc">The New Bedford model is built from basalt volcanic rock fibers and an algae-based bioplastic, materials from modern sustainable boat making that also happen to suit sound. It draws on two decades of living by the ocean in New England. The soundhole, shaped like the open mouth of a ray, nods to the viola braguesa, a guitar from the regional heritage of the Portuguese whalers that she came to know through years of repairs. The woven texture recalls seaweed, coiled rope, and a fisherman&rsquo;s sweater.</p>
+        <ul class="work-links">
+          <li><a href="https://www.atelierrosenkrantz.com/about-1" target="_blank">New Bedford</a><span class="link-kind">Atelier Rosenkrantz</span></li>
         </ul>
       </div>
 
@@ -281,7 +296,7 @@
       var fig = img.closest('figure');
       img.remove();
       if (fig && !fig.querySelector('img')) fig.remove();
-      else if (fig) fig.classList.remove('pair');
+      else if (fig) fig.classList.remove('pair', 'trio');
     });
   });
 </script>
