@@ -203,12 +203,13 @@
     <p class="section-label">Latest Episode</p>
     <div class="featured-inner">
       <div>
-        <p class="episode-number">Episode 07</p>
-        <h2 class="featured-title">Tod Machover: Reimagining the Instrument</h2>
-        <p class="featured-desc">Tod Machover's mother sent him around the house to find objects, turn their sounds into stories, and draw a picture so he could remember what he played. His father was an engineer who wanted anyone to be able to use a computer. In this conversation, Tod talks about the hypercello he built for Yo-Yo Ma, the seven-foot construction kit for children he abandoned for software, the opera he wrote for an orchestra of two, and his new piece for the Boston Symphony, where a live AI listens to every player and, for one section, the conductor stops conducting.</p>
-        <span class="episode-duration">&#9679; 1 hr 12 min</span>
+        <p class="episode-number">Episode 08</p>
+        <h2 class="featured-title">Rachel Rosenkrantz: A Guitar in a Month, Not 200 Years</h2>
+        <p class="featured-desc">At 21, Rachel Rosenkrantz asked a Paris guitar shop for an apprenticeship and was told she was too old. She spent the next decade in industrial design, including at Philips, before she &ldquo;crossfaded&rdquo; her career into lutherie. In this conversation, Rachel walks us through the IKEA box that led to the Mycocaster, an electric guitar with a body grown from mycelium that can be swapped out or upgraded, and why gourd instruments from Mali to Brazil convinced her she could grow a guitar in a month instead of waiting 200 years for a tree.</p>
+        <!-- TODO: confirm the duration -->
+        <span class="episode-duration">&#9679; 52 min</span>
         <div class="hero-actions" style="margin-top:1.75rem;">
-          <a href="machover.html" class="btn btn-outline">Episode page and links</a>
+          <a href="rosenkrantz.html" class="btn btn-outline">Episode page and links</a>
         </div>
       </div>
       <div class="spotify-embed">
@@ -225,6 +226,17 @@
     <h2 class="section-title">Every conversation,<br>from the beginning</h2>
     <div class="ornament">&#9670; &#9670; &#9670;</div>
     <div class="episodes-grid">
+
+      <a class="episode-card" href="rosenkrantz.html">
+        <p class="card-number">Episode 08</p>
+        <h3 class="card-guest">Rachel Rosenkrantz</h3>
+        <p class="card-subtitle">A Guitar in a Month, Not 200 Years</p>
+        <p class="card-desc">Luthier Rachel Rosenkrantz on guitars grown from mycelium, instruments built from paper, kombucha, and gourds, and why natural materials last longer than we think.</p>
+        <div class="card-footer">
+          <span class="card-duration">52 min</span>
+          <span class="card-play">Episode page</span>
+        </div>
+      </a>
 
       <a class="episode-card" href="machover.html">
         <p class="card-number">Episode 07</p>
@@ -324,15 +336,17 @@
               <cite>Tod Machover, Episode 07</cite>
             </a>
           </div>
+          <!-- Rachel Rosenkrantz: save a still from the interview as photo8.png -->
+          <img src="photo8.png" class="slide" alt="Sofia Odeh and Rachel Rosenkrantz in the studio">
+          <div class="slide quote-slide">
+            <a href="rosenkrantz.html">
+              <blockquote>&ldquo;I can grow a guitar in a month instead of 200 years.&rdquo;</blockquote>
+              <cite>Rachel Rosenkrantz, Episode 08</cite>
+            </a>
+          </div>
         </div>
-        <div class="slide-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+        <!-- Dots are generated automatically, one per slide -->
+        <div class="slide-dots"></div>
       </div>
       <div class="about-text-block">
         <p class="section-label">About the Podcast</p>
@@ -427,10 +441,27 @@
     });
   });
 
-  // Slideshow
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
-  let cur = 0;
+  // Slideshow: a photo that fails to load is skipped, and one dot is made per slide
+  document.querySelectorAll('.slideshow img.slide').forEach(img => {
+    img.addEventListener('error', () => { img.remove(); buildDots(); });
+  });
+  let slides = [], dots = [], cur = 0;
+  function buildDots() {
+    slides = Array.from(document.querySelectorAll('.slideshow .slide'));
+    const wrap = document.querySelector('.slide-dots');
+    wrap.innerHTML = '';
+    slides.forEach((s, i) => {
+      const d = document.createElement('span');
+      d.className = 'dot';
+      d.addEventListener('click', () => goTo(i));
+      wrap.appendChild(d);
+    });
+    dots = Array.from(wrap.children);
+    if (cur >= slides.length) cur = 0;
+    slides.forEach(s => s.classList.remove('active'));
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
   function goTo(n) {
     slides[cur].classList.remove('active');
     dots[cur].classList.remove('active');
@@ -438,7 +469,7 @@
     slides[cur].classList.add('active');
     dots[cur].classList.add('active');
   }
-  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+  buildDots();
   setInterval(() => goTo(cur + 1), 3500);
 </script>
 </body>
