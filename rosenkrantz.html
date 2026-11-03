@@ -80,13 +80,12 @@
   .photo-credit { font-size: 0.72rem; color: var(--warm-gray); margin-top: 0.6rem; }
 
   /* WORKS */
-  .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
   .work { background: var(--warm-white); padding: 2rem; }
   .work-image { margin: -2rem -2rem 1.5rem; }
-  .work-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .work-image.pair img { aspect-ratio: 2 / 3; }
   .work-image.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); }
-  .work-image.trio { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); }
-  .work-image.trio img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
   .work-image.inline { margin: 0 0 0.5rem; }
   .work-image.inline img { aspect-ratio: 16 / 9; border-radius: 2px; }
   .video-wrap { position: relative; width: 100%; max-width: 860px; aspect-ratio: 16/9; border-radius: 2px; overflow: hidden; background: #000; }
@@ -236,17 +235,21 @@
       </div>
 
       <div class="work">
-        <figure class="work-image trio">
-          <img src="basaltfibers.png" alt="Basalt fibers used in the New Bedford guitar">
+        <figure class="work-image pair">
           <img src="fish1.png" alt="The New Bedford guitar">
           <img src="fish2.png" alt="The New Bedford guitar">
         </figure>
-        <p class="photo-credit" style="margin:-1rem 0 1rem;">Top: the basalt fibers</p>
         <h3 class="work-title">The New Bedford guitar</h3>
         <p class="work-desc">The New Bedford model is built from basalt volcanic rock fibers and an algae-based bioplastic, materials from modern sustainable boat making that also happen to suit sound. It draws on two decades of living by the ocean in New England. The soundhole, shaped like the open mouth of a ray, nods to the viola braguesa, a guitar from the regional heritage of the Portuguese whalers that she came to know through years of repairs. The woven texture recalls seaweed, coiled rope, and a fisherman&rsquo;s sweater.</p>
         <ul class="work-links">
           <li><a href="https://www.atelierrosenkrantz.com/about-1" target="_blank">New Bedford</a><span class="link-kind">Atelier Rosenkrantz</span></li>
         </ul>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="basaltfibers.png" alt="Basalt fibers used in the New Bedford guitar"></figure>
+        <h3 class="work-title">Basalt fibers</h3>
+        <p class="work-desc">The material behind the New Bedford guitar. Basalt fibers are spun from volcanic rock and used in modern, more sustainable boat building. Rachel paired them with an algae-based bioplastic and wove the body by hand, like a fisherman&rsquo;s sweater made for New England winters.</p>
       </div>
 
     </div>
@@ -296,7 +299,7 @@
       var fig = img.closest('figure');
       img.remove();
       if (fig && !fig.querySelector('img')) fig.remove();
-      else if (fig) fig.classList.remove('pair', 'trio');
+      else if (fig) fig.classList.remove('pair');
     });
   });
 </script>
