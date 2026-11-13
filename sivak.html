@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark Sivak: Creativity Within Constraint | The Art of Inquiry</title>
+<meta name="description" content="Episode 09 of The Art of Inquiry with Mark Sivak, with links to the work discussed.">
+<meta property="og:title" content="Mark Sivak: Creativity Within Constraint">
+<meta property="og:description" content="Episode 09 of The Art of Inquiry, with links to the work discussed.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #ede8df;
+    --warm-white: #f2ede6;
+    --terracotta: #9e3d1a;
+    --terracotta-light: #b84d28;
+    --gold: #7a6030;
+    --warm-gray: #52504c;
+    --dark: #1a1612;
+    --mid: #38322e;
+    --border: #cec5b8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-white);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  a:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+  img { display: block; max-width: 100%; }
+
+  /* NAV (same as main site) */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(242, 237, 230, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); text-decoration: none; letter-spacing: 0.03em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--warm-gray); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 2px; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; font-weight: 500; border: none; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: var(--terracotta); color: var(--warm-white); }
+  .btn-primary:hover { background: var(--terracotta-light); }
+  .btn-outline { background: transparent; color: var(--dark); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  section { padding: 5rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
+
+  /* EPISODE HEADER */
+  .episode-hero { background: var(--cream); padding: 9rem 0 5rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: start; }
+  .hero-grid.no-photo { grid-template-columns: 1fr; }
+  .back-link { display: inline-block; font-size: 0.8rem; color: var(--warm-gray); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--terracotta); }
+  .episode-number { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .episode-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.12; color: var(--dark); margin-bottom: 0.5rem; max-width: 18ch; }
+  .episode-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--terracotta); margin-bottom: 2rem; }
+  .episode-intro { color: var(--warm-gray); font-size: 1rem; line-height: 1.85; max-width: 62ch; margin-bottom: 1.25rem; }
+  .episode-meta { font-size: 0.8rem; color: var(--warm-gray); margin: 1.5rem 0 2rem; }
+  .episode-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-photo { margin-top: 4.6rem; }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+  .photo-credit { font-size: 0.72rem; color: var(--warm-gray); margin-top: 0.6rem; }
+
+  /* WORKS */
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
+  .work { background: var(--warm-white); padding: 2rem; }
+  .work-image { margin: -2rem -2rem 1.5rem; }
+  .work-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .work-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); line-height: 1.3; margin-bottom: 0.5rem; }
+  .work-desc { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 1.25rem; }
+  .work-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .work-links a { font-size: 0.88rem; color: var(--terracotta); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .work-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .link-kind { font-size: 0.72rem; color: var(--warm-gray); margin-left: 0.4rem; }
+  .more { background: var(--cream); }
+
+  /* EXTRA MATERIALS */
+  .extras { background: var(--dark); color: var(--cream); }
+  .extras .section-label { color: var(--gold); }
+  .extras .section-title { color: var(--cream); }
+  .extras-text { font-size: 0.95rem; line-height: 1.9; color: #b8ada4; max-width: 62ch; margin-bottom: 2rem; }
+  .extras .work-links a { color: var(--cream); border-bottom-color: #6a5e58; }
+  .extras .work-links a:hover { color: var(--terracotta-light); border-bottom-color: var(--terracotta-light); }
+  .extras .link-kind { color: #b8ada4; }
+
+  /* LISTEN + FOOTER (same as main site) */
+  .listen { border-top: 1px solid var(--border); background: var(--cream); padding: 3rem 0; }
+  .listen-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .listen-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); }
+  .listen-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .listen-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 2px; text-decoration: none; font-size: 0.82rem; color: var(--dark); transition: all 0.2s; background: var(--warm-white); }
+  .listen-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  footer { background: var(--dark); color: #6a5e58; padding: 2.5rem 2rem; text-align: center; font-size: 0.8rem; letter-spacing: 0.04em; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { color: var(--terracotta-light); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 3.5rem 0; }
+    .episode-hero { padding: 7rem 0 3.5rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-photo { margin-top: 0; }
+    .hero-photo img { aspect-ratio: 3 / 2; }
+    .works-grid { grid-template-columns: 1fr; }
+    .listen-inner { flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">The Art of Inquiry</a>
+  <ul class="nav-links">
+    <li><a href="index.html#episodes">Episodes</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#suggest">Suggest</a></li>
+    <li><a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank">Listen</a></li>
+  </ul>
+</nav>
+
+<!-- EPISODE HEADER -->
+<section class="episode-hero">
+  <div class="container">
+    <a class="back-link" href="index.html#episodes">&#8592; All episodes</a>
+    <div class="hero-grid">
+      <div>
+        <!-- TODO: confirm the episode number -->
+        <p class="episode-number">Episode 09</p>
+        <h1 class="episode-title">Mark Sivak</h1>
+        <p class="episode-subtitle">Creativity Within Constraint</p>
+
+        <p class="episode-intro">Mark Sivak is a teaching professor in Art and Design and in the Sherman Center for Engineering Entrepreneurship Education at Northeastern University, where he earned all three of his degrees. Before finishing his first, he helped scan a patient&rsquo;s leg and 3D print an ankle brace shaped to it. His PhD turned stroke rehabilitation into games, played with a sensor glove or a bicycle wired into a virtual world.</p>
+        <p class="episode-intro">We talk about why a good answer starts with a good question, what a haunted house teaches about immersion, and how Half-Life 2 keeps players inside its rules. Mark explains how VR can build empathy, how he taught hands-on prototyping over Zoom by building student projects in his garage and shipping them out, and why Northeastern&rsquo;s new Performance and Extended Realities degree draws students from many fields.</p>
+
+        <!-- TODO: confirm the duration after any final trims -->
+        <p class="episode-meta">&#9679; 1 hr 3 min</p>
+        <div class="episode-actions">
+          <!-- TODO: replace # with the Spotify episode link -->
+          <a href="#" target="_blank" class="btn btn-primary">&#9654; Listen on Spotify</a>
+          <a href="#works" class="btn btn-outline">From the conversation</a>
+        </div>
+      </div>
+      <!-- Optional: add a still from the recording as sivak.jpg in the repo root. If the file is missing, this slot removes itself. -->
+      <figure class="hero-photo">
+        <img src="sivak.jpg" alt="Mark Sivak in the Snell Library recording studio">
+        <figcaption class="photo-credit">Recorded at Snell Library, Northeastern University</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FROM THE CONVERSATION -->
+<section id="works">
+  <div class="container">
+    <p class="section-label">From the conversation</p>
+    <h2 class="section-title">The work we<br>talked about</h2>
+
+    <div class="works-grid">
+
+      <div class="work">
+        <h3 class="work-title">An ankle brace shaped to one patient</h3>
+        <p class="work-desc">As an undergraduate, Mark worked on scanning a patient&rsquo;s leg and printing an ankle-foot orthosis to match it. The team knew it had to be biomedical and use 3D printing, and most of the creative work happened inside those limits. He came away believing that the more constraints you know, the better you understand the space you have to work in.</p>
+        <ul class="work-links">
+          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3024934/" target="_blank">Patient specific ankle-foot orthoses using rapid prototyping</a><span class="link-kind">JNER, 2011</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Rehabilitation as a game</h3>
+        <p class="work-desc">Relearning movement after a stroke is slow, and patients often feel they are making no progress. Mark&rsquo;s PhD built virtual reality games to change that: a sensor glove for hand exercises and a stationary bicycle that measured how evenly a patient pedaled with their affected and unaffected sides. He worked with clinicians at Spaulding Rehabilitation Hospital in Boston.</p>
+        <ul class="work-links">
+          <li><a href="https://jneuroengrehab.biomedcentral.com/articles/10.1186/1743-0003-11-93" target="_blank">Modular mechatronic system for stationary bicycles interfaced with virtual environment for rehabilitation</a><span class="link-kind">JNER, 2014</span></li>
+          <li><a href="https://ieeexplore.ieee.org/document/5444615/" target="_blank">Haptic system for hand rehabilitation integrating an interactive game with an advanced robotic device</a><span class="link-kind">IEEE Haptics Symposium, 2010</span></li>
+          <li><a href="https://spauldingrehab.org/" target="_blank">Spaulding Rehabilitation Hospital</a><span class="link-kind">Boston</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Half-Life 2 and the rules of the world</h3>
+        <p class="work-desc">A haunted house only scares you if you agree to be a good audience member. Mark sees the same agreement in games. In Half-Life 2, an enemy across a canyon hits the player every time, which quietly pushes them forward along the path the designers intended, while the world&rsquo;s rules still hold. The designer&rsquo;s job is to keep the rules they set.</p>
+        <ul class="work-links">
+          <li><a href="https://store.steampowered.com/app/220/HalfLife_2/" target="_blank">Half-Life 2</a><span class="link-kind">Valve, on Steam</span></li>
+          <li><a href="https://playstorypress.org/books/well-played-1-0/" target="_blank">Half-Life 2: Being Gordon Freeman</a><span class="link-kind">Mark&rsquo;s essay in Well Played 1.0, free to read</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Rekindle</h3>
+        <p class="work-desc">A VR narrative game that reads the player&rsquo;s face. Led by PhD student Hector Fan with Mark and Casper Harteveld, Rekindle asks players to live through other people&rsquo;s memories and respond to them emotionally. One scene evokes the 2016 Pulse nightclub shooting, as a way to build understanding of the LGBTQ+ community through immersion.</p>
+        <ul class="work-links">
+          <li><a href="https://news.northeastern.edu/2026/07/03/virtual-reality-game-emotions/" target="_blank">Rekindle ignites player emotions for next-level VR immersion</a><span class="link-kind">Northeastern Global News</span></li>
+          <li><a href="https://arxiv.org/html/2606.02425v1" target="_blank">Fostering Emotional Perspective-Taking</a><span class="link-kind">research paper</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">VR for burn pain</h3>
+        <p class="work-desc">Mark described a study in which burn patients played a VR game of throwing snowballs in an icy world during wound care, and reported less pain. That game is SnowWorld, developed at the University of Washington HITLab with Harborview Burn Center in Seattle by Hunter Hoffman and David Patterson.</p>
+        <ul class="work-links">
+          <!-- TODO: click once to confirm -->
+          <li><a href="https://www.hitl.washington.edu/projects/burn.html" target="_blank">VR pain control and SnowWorld</a><span class="link-kind">UW HITLab</span></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/10692634/" target="_blank">Virtual reality as an adjunctive pain control during burn wound care in adolescent patients</a><span class="link-kind">Pain, 2000</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Teaching from the garage</h3>
+        <p class="work-desc">Mark taught Cornerstone, Northeastern&rsquo;s first-year engineering course, where he told students that a good answer needs a good question. When classes moved online, he built his students&rsquo; projects in his garage and shipped them out, so teams could still prototype together over video.</p>
+        <ul class="work-links">
+          <li><a href="https://catalog.northeastern.edu/undergraduate/engineering/first-year-engineering/" target="_blank">Cornerstone of Engineering</a><span class="link-kind">course catalog</span></li>
+          <li><a href="https://learning.northeastern.edu/educator-spotlight-mark-sivak/" target="_blank">Educator Spotlight: Mark Sivak</a><span class="link-kind">Northeastern CATLR</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Degrees in extended reality</h3>
+        <p class="work-desc">Northeastern&rsquo;s Performance and Extended Realities BS is only a year or two old, run jointly by Theatre, Music, and Art and Design. Mark also coordinates the MS in Extended Realities, which has concentrations as different as public history and marketing. Both bring in students who want to use the medium for whatever they care about.</p>
+        <ul class="work-links">
+          <li><a href="https://camd.northeastern.edu/programs/performance-and-extended-realities-bs" target="_blank">Performance and Extended Realities, BS</a><span class="link-kind">CAMD</span></li>
+          <li><a href="https://camd.northeastern.edu/programs/extended-realities-ms/" target="_blank">Extended Realities, MS</a><span class="link-kind">CAMD</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MORE OF MARK'S WORK -->
+<section class="more" id="more">
+  <div class="container">
+    <p class="section-label">More of Mark&rsquo;s work</p>
+    <h2 class="section-title">Beyond the<br>conversation</h2>
+
+    <div class="works-grid">
+
+      <div class="work">
+        <h3 class="work-title">Preserving buildings in Benin</h3>
+        <p class="work-desc">Part of the African Building Heritage Project. Researchers scan historic buildings with drones, and Mark turns the scans into virtual reality experiences that people can walk through.</p>
+        <ul class="work-links">
+          <li><a href="https://news.northeastern.edu/2024/10/31/african-architecture-preservation-research/" target="_blank">Researchers use drones and VR to preserve at-risk African architecture</a><span class="link-kind">Northeastern Global News</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Building Conversation</h3>
+        <p class="work-desc">An augmented reality startup where Mark served as CTO. Its app lets you hold up an iPad on a real street and see a proposed building standing there at full size.</p>
+        <ul class="work-links">
+          <li><a href="https://www.buildingconversation.com/" target="_blank">Building Conversation</a><span class="link-kind">company site</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Faculty pages and publications</h3>
+        <p class="work-desc">Mark&rsquo;s profiles in the College of Arts, Media and Design and the College of Engineering, and his publication list.</p>
+        <ul class="work-links">
+          <li><a href="https://camd.northeastern.edu/people/mark-sivak/" target="_blank">CAMD profile</a><span class="link-kind">Art and Design</span></li>
+          <li><a href="https://coe.northeastern.edu/people/sivak-mark/" target="_blank">College of Engineering profile</a><span class="link-kind">Sherman Center</span></li>
+          <li><a href="https://coe.northeastern.edu/academics-experiential-learning/business-entrepreneurship-and-leadership/engineering-entrepreneurship-education/" target="_blank">Sherman Center for Engineering Entrepreneurship Education</a><span class="link-kind">Northeastern</span></li>
+          <li><a href="https://scholar.google.com/citations?user=3wOVNaUAAAAJ" target="_blank">Google Scholar</a><span class="link-kind">publications</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXTRA MATERIALS -->
+<section class="extras" id="extras">
+  <div class="container">
+    <p class="section-label">Extra materials</p>
+    <h2 class="section-title">Seventeen years earlier</h2>
+    <p class="extras-text">In 2009, while working on his PhD, Mark wrote a close reading of Half-Life 2 for <em>Well Played 1.0</em>, a collection of essays on how individual games create meaning. Two years later he wrote about Legacy of Kain: Soul Reaver for <em>Well Played 3.0</em>. Both books are free to read under a Creative Commons license, and the Half-Life 2 essay covers the same ideas about player control he returns to in our conversation.</p>
+    <ul class="work-links">
+      <li><a href="https://playstorypress.org/books/well-played-1-0/" target="_blank">Half-Life 2: Being Gordon Freeman</a><span class="link-kind">Well Played 1.0, 2009</span></li>
+      <li><a href="https://playstorypress.org/books/well-played-3-0/" target="_blank">Blocks, Planes, Drain, and Kain: Well Played for Legacy of Kain: Soul Reaver</a><span class="link-kind">Well Played 3.0, 2011</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- LISTEN ON -->
+<div class="listen">
+  <div class="container">
+    <div class="listen-inner">
+      <p class="listen-label">Available on</p>
+      <div class="listen-links">
+        <a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank" class="listen-link">&#9654; Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/art-of-inquiry/id1896270647" target="_blank" class="listen-link">&#9835; Apple Podcasts</a>
+        <a href="https://music.amazon.com/podcasts/35a56baf-caa5-43d5-81f4-04f6d8f62e6d/art-of-inquiry" target="_blank" class="listen-link">&#9675; Amazon Music</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&#169; 2026 The Art of Inquiry &nbsp;&#183;&nbsp; Northeastern University &nbsp;&#183;&nbsp; <a href="mailto:hello@artofinquiry.com">Get in touch</a></p>
+</footer>
+
+<script>
+  // If a photo hasn't been added yet, remove its slot so the layout stays clean.
+  document.querySelectorAll('.work-image img, .hero-photo img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var fig = img.closest('figure');
+      if (fig && fig.classList.contains('hero-photo')) {
+        fig.closest('.hero-grid').classList.add('no-photo');
+      }
+      if (fig) fig.remove();
+    });
+  });
+</script>
+</body>
+</html>

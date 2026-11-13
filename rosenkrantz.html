@@ -62,6 +62,7 @@
   .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
   .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1rem; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
+  .section-text { font-size: 0.95rem; line-height: 1.85; color: var(--warm-gray); max-width: 62ch; }
 
   /* EPISODE HEADER */
   .episode-hero { background: var(--cream); padding: 9rem 0 5rem; }
@@ -73,6 +74,8 @@
   .episode-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.12; color: var(--dark); margin-bottom: 0.5rem; max-width: 18ch; }
   .episode-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--terracotta); margin-bottom: 2rem; }
   .episode-intro { color: var(--warm-gray); font-size: 1rem; line-height: 1.85; max-width: 62ch; margin-bottom: 1.25rem; }
+  .episode-intro a, .work-desc a, .section-text a { color: var(--terracotta); text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; }
+  .episode-intro a:hover, .work-desc a:hover, .section-text a:hover { color: var(--gold); border-bottom-color: var(--gold); }
   .episode-meta { font-size: 0.8rem; color: var(--warm-gray); margin: 1.5rem 0 2rem; }
   .episode-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   .hero-photo { margin-top: 4.6rem; }
@@ -81,6 +84,7 @@
 
   /* WORKS */
   .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
+  .works-grid.compact { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .work { background: var(--warm-white); padding: 2rem; }
   .work-image { margin: -2rem -2rem 1.5rem; }
   .work-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
@@ -127,7 +131,7 @@
     .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
     .hero-photo { margin-top: 0; }
     .hero-photo img { aspect-ratio: 3 / 2; }
-    .works-grid { grid-template-columns: 1fr; }
+    .works-grid, .works-grid.compact { grid-template-columns: 1fr; }
     .listen-inner { flex-direction: column; }
   }
 
@@ -160,7 +164,7 @@
         <h1 class="episode-title">Rachel Rosenkrantz</h1>
         <p class="episode-subtitle">A Guitar in a Month, Not 200 Years</p>
 
-        <p class="episode-intro">At 21, Rachel Rosenkrantz asked a Paris guitar shop for an apprenticeship and was told she was too old. She spent the next decade in industrial design, including on a lighting innovation team at Philips, until weekend classes at a guitar building school led her to &ldquo;crossfade&rdquo; her career. She now runs Atelier Rosenkrantz and teaches in Experimental and Foundation Studies at the Rhode Island School of Design.</p>
+        <p class="episode-intro">At 21, Rachel Rosenkrantz asked a Paris guitar shop for an apprenticeship and was told she was too old. She spent the next decade in industrial design, including on a lighting innovation team at Philips, until weekend classes at a guitar building school led her to &ldquo;crossfade&rdquo; her career. She now runs <a href="https://atelierrosenkrantz.com/" target="_blank">Atelier Rosenkrantz</a> and teaches in Experimental and Foundation Studies at the Rhode Island School of Design.</p>
         <p class="episode-intro">We talk about the IKEA box that led to an electric guitar grown from mycelium, a paper sample she kept on a kitchen shelf for years, a kombucha experiment that still needs a chemist, an ambidextrous guitar that came from listening to Elizabeth Cotten, and why instruments made from gourds convinced her she could grow a guitar in a month instead of waiting 200 years for a tree.</p>
 
         <!-- TODO: confirm the duration -->
@@ -198,7 +202,7 @@
           <img src="honey2.png" alt="Honeycomb on the soundboard of the 309Hz guitar">
         </figure>
         <h3 class="work-title">309Hz, the beehive guitar</h3>
-        <p class="work-desc">Rachel left this steel-string guitar&rsquo;s soundboard in a beehive for a whole year so the bees would build on it. Honeycomb diffuses sound naturally, and bees communicate through it with vibrations in a range close to a guitar&rsquo;s. She calls it a visual poetry experiment and is fine if it does not last, though beehive specimens from the 1970s at RISD&rsquo;s Nature Lab are still in good condition.</p>
+        <p class="work-desc">Rachel left this steel-string guitar&rsquo;s soundboard in a beehive for a whole year so the bees would build on it. Honeycomb diffuses sound naturally, and bees communicate through it with vibrations in a range close to a guitar&rsquo;s. She calls it a visual poetry experiment and is fine if it does not last, though beehive specimens from the 1970s at RISD&rsquo;s <a href="https://naturelab.risd.edu/" target="_blank">Nature Lab</a> are still in good condition.</p>
         <ul class="work-links">
           <li><a href="https://www.atelierrosenkrantz.com/pawtuxet" target="_blank">309Hz</a><span class="link-kind">Atelier Rosenkrantz</span></li>
         </ul>
@@ -253,7 +257,52 @@
       </div>
 
     </div>
-    <p class="photo-credit" style="margin-top:1rem;">Photos courtesy of Atelier Rosenkrantz.</p>
+    <p class="photo-credit" style="margin-top:1rem;">Photos courtesy of Atelier Rosenkrantz. See all of Rachel&rsquo;s instruments at <a href="https://atelierrosenkrantz.com/" target="_blank" style="color:var(--terracotta);">atelierrosenkrantz.com</a>.</p>
+  </div>
+</section>
+
+<!-- RECOMMENDED BY RACHEL -->
+<section id="materials" style="padding-top:0;">
+  <div class="container">
+    <p class="section-label">Recommended by Rachel</p>
+    <h2 class="section-title">Others working with<br>alternative materials</h2>
+    <p class="section-text">Rachel suggested these places to see what else is being grown, pressed, and shared.</p>
+
+    <div class="works-grid compact">
+
+      <div class="work">
+        <h3 class="work-title">RISD Nature Lab</h3>
+        <p class="work-desc">The Rhode Island School of Design&rsquo;s collection of natural specimens and its lab for biology and design. It holds the 1970s beehive specimens Rachel mentions when talking about the 309Hz guitar.</p>
+        <ul class="work-links">
+          <li><a href="https://naturelab.risd.edu/" target="_blank">Nature Lab</a><span class="link-kind">RISD</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Materiom</h3>
+        <p class="work-desc">An open library of recipes for materials made from biomass. Each entry lists the ingredients and steps, so anyone can reproduce a material and build on it.</p>
+        <ul class="work-links">
+          <li><a href="https://www.materiom.org/" target="_blank">Materiom</a><span class="link-kind">materiom.org</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Richlite</h3>
+        <p class="work-desc">A dense sheet material made from paper and resin. Guitar makers use it for fingerboards in place of ebony and other tropical hardwoods.</p>
+        <ul class="work-links">
+          <li><a href="https://www.richlite.com/" target="_blank">Richlite</a><span class="link-kind">richlite.com</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <h3 class="work-title">Ecovative</h3>
+        <p class="work-desc">A company that grows materials from mycelium, including mushroom-based packaging made to replace polystyrene foam.</p>
+        <ul class="work-links">
+          <li><a href="https://ecovative.com/" target="_blank">Ecovative</a><span class="link-kind">ecovative.com</span></li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </section>
 
