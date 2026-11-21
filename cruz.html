@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro M. Cruz: Giving Data a Body | The Art of Inquiry</title>
+<meta name="description" content="Episode 10 of The Art of Inquiry with information designer Pedro M. Cruz, with links to the work discussed.">
+<meta property="og:title" content="Pedro M. Cruz: Giving Data a Body">
+<meta property="og:description" content="Episode 10 of The Art of Inquiry, with links to the works discussed.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #ede8df;
+    --warm-white: #f2ede6;
+    --terracotta: #9e3d1a;
+    --terracotta-light: #b84d28;
+    --gold: #7a6030;
+    --warm-gray: #52504c;
+    --dark: #1a1612;
+    --mid: #38322e;
+    --border: #cec5b8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-white);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  a:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+  img { display: block; max-width: 100%; }
+
+  /* NAV (same as main site) */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(242, 237, 230, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); text-decoration: none; letter-spacing: 0.03em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--warm-gray); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 2px; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; font-weight: 500; border: none; font-family: 'Inter', sans-serif; }
+  .btn-primary { background: var(--terracotta); color: var(--warm-white); }
+  .btn-primary:hover { background: var(--terracotta-light); }
+  .btn-outline { background: transparent; color: var(--dark); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  section { padding: 5rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
+  .section-text { font-size: 0.95rem; line-height: 1.85; color: var(--warm-gray); max-width: 62ch; }
+
+  /* EPISODE HEADER */
+  .episode-hero { background: var(--cream); padding: 9rem 0 5rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: start; }
+  .hero-grid.no-photo { grid-template-columns: 1fr; }
+  .back-link { display: inline-block; font-size: 0.8rem; color: var(--warm-gray); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--terracotta); }
+  .episode-number { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .episode-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.12; color: var(--dark); margin-bottom: 0.5rem; max-width: 18ch; }
+  .episode-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--terracotta); margin-bottom: 2rem; }
+  .episode-intro { color: var(--warm-gray); font-size: 1rem; line-height: 1.85; max-width: 62ch; margin-bottom: 1.25rem; }
+  .episode-intro a, .work-desc a, .section-text a { color: var(--terracotta); text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; }
+  .episode-intro a:hover, .work-desc a:hover, .section-text a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .episode-meta { font-size: 0.8rem; color: var(--warm-gray); margin: 1.5rem 0 2rem; }
+  .episode-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .photo-credit { font-size: 0.72rem; color: var(--warm-gray); margin-top: 0.6rem; }
+
+  /* WORKS */
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
+  .work { background: var(--warm-white); padding: 2rem; }
+  .work-image { margin: -2rem -2rem 1.5rem; }
+  .work-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); line-height: 1.3; margin-bottom: 0.5rem; }
+  .work-desc { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 1.25rem; }
+
+  /* TEACHING */
+  .teaching { background: var(--dark); color: var(--cream); }
+  .teaching .section-label { color: var(--gold); }
+  .teaching .section-title { color: var(--cream); }
+  .teaching-text { font-size: 0.95rem; line-height: 1.9; color: #b8ada4; max-width: 62ch; margin-bottom: 1.25rem; }
+
+  /* LISTEN + FOOTER (same as main site) */
+  .listen { border-top: 1px solid var(--border); background: var(--cream); padding: 3rem 0; }
+  .listen-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .listen-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); }
+  .listen-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .listen-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: 2px; text-decoration: none; font-size: 0.82rem; color: var(--dark); transition: all 0.2s; background: var(--warm-white); }
+  .listen-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  footer { background: var(--dark); color: #6a5e58; padding: 2.5rem 2rem; text-align: center; font-size: 0.8rem; letter-spacing: 0.04em; }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { color: var(--terracotta-light); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 3.5rem 0; }
+    .episode-hero { padding: 7rem 0 3.5rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .works-grid { grid-template-columns: 1fr; }
+    .listen-inner { flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">The Art of Inquiry</a>
+  <ul class="nav-links">
+    <li><a href="index.html#episodes">Episodes</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#suggest">Suggest</a></li>
+    <li><a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank">Listen</a></li>
+  </ul>
+</nav>
+
+<!-- EPISODE HEADER -->
+<section class="episode-hero">
+  <div class="container">
+    <a class="back-link" href="index.html#episodes">&#8592; All episodes</a>
+    <div class="hero-grid no-photo">
+      <div>
+        
+        <p class="episode-number">Episode 10</p>
+        <h1 class="episode-title">Pedro M. Cruz</h1>
+        <p class="episode-subtitle">Giving Data a Body</p>
+
+        <p class="episode-intro">Pedro M. Cruz started out studying engineering physics in Portugal, wanting to see the concepts behind the equations, not just memorize the steps to solve them. Writing his first physics simulations, and watching electric field lines move on his screen, led him to informatics engineering and then to design. He is now an associate professor of Art and Design at Northeastern University, where he teaches information design and data visualization and co-directs the CoLab for Data Impact.</p>
+        <p class="episode-intro">We talk about where data ends and meaning begins: why four colonial empires bump into each other in one of his animations, how two centuries of US immigration became the rings of a tree, why Lisbon&rsquo;s traffic is colored like traffic lights, and why politicians who move between corporate boards became swarming creatures somewhere between a bug and a slug.</p>
+
+        
+        <p class="episode-meta">&#9679; 1 hr 30 min</p>
+        <div class="episode-actions">
+          <!-- TODO: replace # with the Spotify episode link -->
+          <a href="#" target="_blank" class="btn btn-primary">&#9654; Listen on Spotify</a>
+          <a href="#works" class="btn btn-outline">From the conversation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FROM THE CONVERSATION -->
+<section id="works">
+  <div class="container">
+    <p class="section-label">From the conversation</p>
+    <h2 class="section-title">The work we<br>talked about</h2>
+
+    <div class="works-grid">
+
+      <div class="work">
+        <figure class="work-image"><img src="empires.png" alt="Visualizing Empires Decline, with four colonial empires drawn as shrinking shapes"></figure>
+        <h3 class="work-title">Visualizing Empires Decline</h3>
+        <p class="work-desc">The Portuguese, Spanish, French, and British empires shrink over time as their colonies become independent. The land areas come from data. The way the empires bump into each other as they shrink does not. Pedro added it because the empires were always competing for space. As he puts it in the episode, that part is not data, it is meaning.</p>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="dendrochronology.png" alt="Simulated Dendrochronology of US Immigration, drawn as the rings of a tree"></figure>
+        <h3 class="work-title">Simulated Dendrochronology of US Immigration</h3>
+        <p class="work-desc">Two centuries of immigration to the United States grow outward as the rings of a tree, with one cell for every hundred people. Partway through the project, Pedro learned that the cells at the center of a real tree are dead but still part of its structure. The oldest rings became the people who arrived long ago and are still part of what makes the country.</p>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="lisbon.png" alt="Visualization of Lisbon's traffic"></figure>
+        <h3 class="work-title">Lisbon&rsquo;s traffic</h3>
+        <p class="work-desc">A day of traffic in Lisbon, colored like traffic lights so anyone can read the speed at a glance. Watching it, you can see the city wake up in the morning and go home at night.</p>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="corporate.png" alt="An Ecosystem of Corporate Politicians"></figure>
+        <h3 class="work-title">An Ecosystem of Corporate Politicians</h3>
+        <p class="work-desc">Portuguese politicians who move between government and corporate boards, drawn as swarming creatures somewhere between a bug and a slug. Pedro took the idea from old political caricatures, which have always used animals to say something about the people they draw.</p>
+      </div>
+
+    </div>
+    <!-- TODO: confirm Pedro's site URL -->
+    <p class="photo-credit" style="margin-top:1rem;">See more of Pedro&rsquo;s work at <a href="https://pmcruz.com/" target="_blank" style="color:var(--terracotta);">pmcruz.com</a>.</p>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section class="teaching" id="teaching">
+  <div class="container">
+    <p class="section-label">In the classroom</p>
+    <h2 class="section-title">Learning the rules<br>before breaking them</h2>
+    <p class="teaching-text">Pedro teaches his students the rules of visualization first, and only then shows them work that breaks those rules on purpose. Breaking a rule is fine, as long as you know which line you are crossing and why.</p>
+  </div>
+</section>
+
+<!-- LISTEN ON -->
+<div class="listen">
+  <div class="container">
+    <div class="listen-inner">
+      <p class="listen-label">Available on</p>
+      <div class="listen-links">
+        <a href="https://open.spotify.com/show/7vNbyoHH3YWxI9D1fchToJ" target="_blank" class="listen-link">&#9654; Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/art-of-inquiry/id1896270647" target="_blank" class="listen-link">&#9835; Apple Podcasts</a>
+        <a href="https://music.amazon.com/podcasts/35a56baf-caa5-43d5-81f4-04f6d8f62e6d/art-of-inquiry" target="_blank" class="listen-link">&#9675; Amazon Music</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&#169; 2026 The Art of Inquiry &nbsp;&#183;&nbsp; Northeastern University &nbsp;&#183;&nbsp; <a href="mailto:hello@artofinquiry.com">Get in touch</a></p>
+</footer>
+
+<script>
+  // A photo that fails to load is removed along with its empty frame.
+  document.querySelectorAll('.work-image img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var fig = img.closest('figure');
+      if (fig) fig.remove(); else img.remove();
+    });
+  });
+</script>
+</body>
+</html>
