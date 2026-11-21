@@ -84,7 +84,13 @@
   .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); margin-top: 3rem; }
   .work { background: var(--warm-white); padding: 2rem; }
   .work-image { margin: -2rem -2rem 1.5rem; }
-  .work-image img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-image img { width: 100%; height: auto; background: var(--dark); }
+  .work-video { margin: -2rem -2rem 1.5rem; position: relative; aspect-ratio: 16 / 9; background: #000; }
+  .work-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .work-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .work-links a { font-size: 0.88rem; color: var(--terracotta); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .work-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .link-kind { font-size: 0.72rem; color: var(--warm-gray); margin-left: 0.4rem; }
   .work-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); line-height: 1.3; margin-bottom: 0.5rem; }
   .work-desc { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 1.25rem; }
 
@@ -171,32 +177,54 @@
     <div class="works-grid">
 
       <div class="work">
-        <figure class="work-image"><img src="empires.png" alt="Visualizing Empires Decline, with four colonial empires drawn as shrinking shapes"></figure>
+        <div class="work-video"><iframe src="https://player.vimeo.com/video/11506746?title=0&byline=0&portrait=0" title="Visualizing Empires Decline" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
         <h3 class="work-title">Visualizing Empires Decline</h3>
-        <p class="work-desc">The Portuguese, Spanish, French, and British empires shrink over time as their colonies become independent. The land areas come from data. The way the empires bump into each other as they shrink does not. Pedro added it because the empires were always competing for space. As he puts it in the episode, that part is not data, it is meaning.</p>
+        <p class="work-desc">The British, French, Portuguese, and Spanish empires shrink through the 19th and 20th centuries, splitting apart like cells as their colonies become independent. The land areas come from data. The way the empires bump into each other as they shrink does not. Pedro added it because the empires were always competing for space. As he puts it in the episode, that part is not data, it is meaning. The music was composed for the piece by CHOP WOOD.</p>
+        <ul class="work-links">
+          <li><a href="https://pmcruz.com/works/visualizing-empires-decline.html" target="_blank">Visualizing Empires Decline</a><span class="link-kind">pmcruz.com</span></li>
+        </ul>
       </div>
 
       <div class="work">
-        <figure class="work-image"><img src="dendrochronology.png" alt="Simulated Dendrochronology of US Immigration, drawn as the rings of a tree"></figure>
-        <h3 class="work-title">Simulated Dendrochronology of US Immigration</h3>
-        <p class="work-desc">Two centuries of immigration to the United States grow outward as the rings of a tree, with one cell for every hundred people. Partway through the project, Pedro learned that the cells at the center of a real tree are dead but still part of its structure. The oldest rings became the people who arrived long ago and are still part of what makes the country.</p>
+        <figure class="work-image"><img src="https://pmcruz.com/dendrochronology/images/us-1531234391066-01-940.png" alt="Tree rings showing immigration to the United States from 1830 to 2016" loading="lazy"></figure>
+        <h3 class="work-title">Simulated Dendrochronology of U.S. Immigration</h3>
+        <p class="work-desc">Immigration to the United States grows outward as the rings of a tree, one ring per decade, with each dot standing for 100 immigrants. Rings lean toward the direction people came from: east for Europe, south for Latin America. Partway through the project, Pedro learned that the cells at the center of a real tree are dead but still part of its structure. The oldest rings became the people who arrived long ago and are still part of what makes the country. Made with John Wihbey, Avni Ghael, and Felipe Shibuya.</p>
+        <ul class="work-links">
+          <li><a href="https://pmcruz.com/dendrochronology/" target="_blank">Simulated Dendrochronology of U.S. Immigration</a><span class="link-kind">pmcruz.com</span></li>
+          <li><a href="https://www.nationalgeographic.com/culture-exploration/2018/07/graphic-united-states-immigration-origins-rings-tree-culture/" target="_blank">200 Years of U.S. Immigration Looks Like the Rings of a Tree</a><span class="link-kind">National Geographic</span></li>
+        </ul>
       </div>
 
       <div class="work">
-        <figure class="work-image"><img src="lisbon.png" alt="Visualization of Lisbon's traffic"></figure>
+        <div class="work-video"><iframe src="https://player.vimeo.com/video/131835197?title=0&byline=0&portrait=0" title="Visualizing Lisbon's traffic" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
         <h3 class="work-title">Lisbon&rsquo;s traffic</h3>
-        <p class="work-desc">A day of traffic in Lisbon, colored like traffic lights so anyone can read the speed at a glance. Watching it, you can see the city wake up in the morning and go home at night.</p>
+        <p class="work-desc">The route trails of 1,534 vehicles in Lisbon during October 2009, condensed into a single day and colored like traffic lights so anyone can read the speed at a glance. Watching it, you can see the city wake up in the morning and go home at night. Pedro later pushed the same data further, drawing the road network as blood vessels that thicken with more cars and darken when traffic slows.</p>
+        <ul class="work-links">
+          <li><a href="https://pmcruz.com/works/lisbon-s-traffic.html" target="_blank">Visualizing Lisbon&rsquo;s traffic</a><span class="link-kind">pmcruz.com</span></li>
+          <li><a href="https://pmcruz.com/works/blood-vessels-cartogram.html" target="_blank">Blood vessels cartogram</a><span class="link-kind">pmcruz.com</span></li>
+        </ul>
       </div>
 
       <div class="work">
-        <figure class="work-image"><img src="corporate.png" alt="An Ecosystem of Corporate Politicians"></figure>
+        <figure class="work-image"><img src="https://pmcruz.com/eco/img/preview.png" alt="An Ecosystem of Corporate Politicians, with politicians swarming around companies" loading="lazy"></figure>
         <h3 class="work-title">An Ecosystem of Corporate Politicians</h3>
-        <p class="work-desc">Portuguese politicians who move between government and corporate boards, drawn as swarming creatures somewhere between a bug and a slug. Pedro took the idea from old political caricatures, which have always used animals to say something about the people they draw.</p>
+        <p class="work-desc">Members of Portuguese governments from 1975 to 2013 who held positions at companies, drawn as living creatures somewhere between a bug and a slug. Each one circles the companies it passed through, and the companies grow with the number of politicians they hosted. Colors show each politician&rsquo;s last known party. Pedro took the idea from old political caricatures, which have always used animals to say something about the people they draw.</p>
+        <ul class="work-links">
+          <li><a href="https://pmcruz.com/eco" target="_blank">Explore the ecosystem</a><span class="link-kind">pmcruz.com</span></li>
+        </ul>
+      </div>
+
+      <div class="work">
+        <figure class="work-image"><img src="https://pmcruz.com/images/l/img_8962-1880.jpg" alt="A Perfect Storm on display" loading="lazy"></figure>
+        <h3 class="work-title">A Perfect Storm</h3>
+        <p class="work-desc">A visualization of national climate risk alongside greenhouse gas emissions, shown in Rio de Janeiro in 2024. Pedro credits the concept, design, and implementation to <a href="https://chloeprock.com" target="_blank">Chloe Prock</a>. It is a project of the CAMD Creative Climate Lab and the Co-Lab for Data Impact.</p>
+        <ul class="work-links">
+          <li><a href="https://pmcruz.com/works/a-perfect-storm.html" target="_blank">A Perfect Storm</a><span class="link-kind">pmcruz.com</span></li>
+        </ul>
       </div>
 
     </div>
-    <!-- TODO: confirm Pedro's site URL -->
-    <p class="photo-credit" style="margin-top:1rem;">See more of Pedro&rsquo;s work at <a href="https://pmcruz.com/" target="_blank" style="color:var(--terracotta);">pmcruz.com</a>.</p>
+    <p class="photo-credit" style="margin-top:1rem;">Images and videos by Pedro M. Cruz. See all of his work at <a href="https://pmcruz.com/" target="_blank" style="color:var(--terracotta);">pmcruz.com</a>.</p>
   </div>
 </section>
 
